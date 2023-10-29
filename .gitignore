@@ -2,6 +2,12 @@
 .venv
 .env
 .idea
+.ckpt
+*.ckpt
+.csv
+*.csv
 
 setup.py
 setup.cfg
+
+__pycache__
