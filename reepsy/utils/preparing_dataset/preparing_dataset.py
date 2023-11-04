@@ -5,7 +5,7 @@ from skimage import io
 from torch.utils.data import Dataset
 
 
-class DatasetLoader(Dataset):
+class PreparingDataset(Dataset):
     def __init__(self,  dataset_csv_path, dataset_data_path, transform=None):
         self.annotations = pd.read_csv(dataset_csv_path)
         self.root_dir = dataset_data_path
