@@ -1,5 +1,5 @@
 from io import open
-from setuptools import setup
+from setuptools import setup, find_packages
 from pathlib import Path
 from typing import List
 
@@ -11,11 +11,10 @@ from typing import List
 """
 
 
-VERSION = '0.0.2'
+VERSION = '0.0.1.0'
+NAME = 'reepsy'
 
 HERE = Path(__file__).parent.resolve()
-
-NAME = 'reepsy'
 
 AUTHOR = 'Elisha Flacon'
 DESCRIPTION = 'Reepsy - simple library which solves classification pictures problem with machine learning'
@@ -26,21 +25,6 @@ DOWNLOAD_URL = 'https://github.com/ElishaFlacon/reepsy/archive/main.zip'
 
 REQUIRES_PYTHON = '>=3.8'
 LICENSE = 'BSD 3-Clause'
-
-
-# def _readlines(*names: str, **kwargs) -> List[str]:
-#     encoding = kwargs.get('encoding', 'utf-8')
-#     lines = Path(__file__).parent.joinpath(*names).read_text(encoding=encoding).splitlines()
-#     return list(map(str.strip, lines))
-
-
-# def _extract_requirements(file_name: str):
-#     return [line for line in _readlines(file_name) if line and not line.startswith('#')]
-
-
-# def _get_requirements(req_name: str):
-#     requirements = _extract_requirements(req_name)
-#     return requirements
 
 
 setup(
@@ -59,7 +43,7 @@ setup(
 
     license=LICENSE,
 
-    packages=['reepsy'],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=['torch', 'torchvision', 'torchaudio'],
 
