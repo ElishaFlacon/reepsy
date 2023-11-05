@@ -59,7 +59,9 @@ class Network():
         return float(num_correct)/float(num_samples)
 
     def save(self, path) -> None:
-        self.__model
+        # self.__model
+        pass
 
     def load(self, path) -> None:
-        self.__model
+        # self.__model
+        pass
