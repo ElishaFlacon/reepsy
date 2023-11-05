@@ -1,49 +1,74 @@
-#!/usr/bin/env python
-
 from io import open
 from setuptools import setup
+from pathlib import Path
+from typing import List
+
 
 """
-:authors: ElishaFlacon
-:copyright: (c) 2023 ElishaFlacon
+:authors: Elisha Flacon
+:license: BSD 3-Clause License, see LICENSE file
+:copyright: (c) 2023 Elisha Flacon
 """
 
-version = '0.0.1'
 
-with open('README.md', encoding='utf-8') as f:
-    long_description = f.read()
+VERSION = '0.0.1'
+
+HERE = Path(__file__).parent.resolve()
+
+NAME = 'reepsy'
+
+AUTHOR = 'Elisha Flacon'
+DESCRIPTION = 'Reepsy - simple library which solves classification pictures problem with machine learning'
+LONG_DESCRIPTION = Path(HERE, 'README.md').read_text(encoding='utf-8')
+
+URL = 'https://github.com/ElishaFlacon/reepsy'
+DOWNLOAD_URL = 'https://github.com/ElishaFlacon/reepsy/archive/main.zip'
+
+REQUIRES_PYTHON = '>=3.8'
+LICENSE = 'BSD 3-Clause'
+
+
+def _readlines(*names: str, **kwargs) -> List[str]:
+    encoding = kwargs.get('encoding', 'utf-8')
+    lines = Path(__file__).parent.joinpath(
+        *names).read_text(encoding=encoding).splitlines()
+    return list(map(str.strip, lines))
+
+
+def _extract_requirements(file_name: str):
+    return [line for line in _readlines(file_name) if line and not line.startswith('#')]
+
+
+def _get_requirements(req_name: str):
+    requirements = _extract_requirements(req_name)
+    return requirements
+
 
 setup(
-    name='reepsy',
-    version=version,
-    author='ElishaFlacon',
-    author_email='',
-    description=(
-        u'Библиотека для '
-        u'Club House (clubhouse.io API wrapper)'
-    ),
-    long_description=long_description,
+    name=NAME,
+    version=VERSION,
+    author=AUTHOR,
+
+    description=DESCRIPTION,
+    long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
 
-    url='https://github.com/ElishaFlacon/reepsy',
-    download_url='https://github.com/ElishaFlacon/reepsy/archive/main.zip',
+    url=URL,
+    download_url=DOWNLOAD_URL,
 
-    license='Apache License, Version 2.0, see LICENSE file',
+    python_requires=REQUIRES_PYTHON,
 
-    packages=['club_house_api'],
-    install_requires=['aiohttp', 'aiofiles'],
+    license=LICENSE,
+
+    packages=['reepsy'],
+    include_package_data=True,
+    install_requires=_get_requirements('requirements.txt'),
 
     classifiers=[
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: OS Independent',
-        'Intended Audience :: End Users/Desktop',
+        'License :: OSI Approved :: BSD License',
         'Intended Audience :: Developers',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: Implementation :: PyPy',
-        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ]
 )
