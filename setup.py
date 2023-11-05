@@ -1,7 +1,6 @@
 from io import open
 from setuptools import setup, find_packages
 from pathlib import Path
-from typing import List
 
 
 """
@@ -11,7 +10,7 @@ from typing import List
 """
 
 
-VERSION = '0.0.1.0'
+VERSION = '0.0.1.1'
 NAME = 'reepsy'
 
 HERE = Path(__file__).parent.resolve()
@@ -45,7 +44,8 @@ setup(
 
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['torch', 'torchvision', 'torchaudio'],
+    install_requires=['torch', 'torchvision', 'torchaudio',
+                      'pandas', 'scikit-image', 'opencv-python'],
 
     classifiers=[
         'License :: OSI Approved :: BSD License',
