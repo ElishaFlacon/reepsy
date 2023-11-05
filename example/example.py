@@ -18,7 +18,7 @@ test_dataset = Data.load_dataset(
 model = network.train(dataset=train_dataset, num_epochs=2)
 predict = network.predict(dataset=test_dataset)
 
-print(f'Predictions: {predict}')
+print(f'Predictions rate: {predict}')
 
 index = Classification.classify_picture(
     model=model,

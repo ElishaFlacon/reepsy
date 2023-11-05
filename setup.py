@@ -3,11 +3,9 @@
 from io import open
 from setuptools import setup
 
-#! изменить
 """
-:authors: Peopl3s
-:license: Apache License, Version 2.0, see LICENSE file
-:copyright: (c) 2021 Peopl3s
+:authors: ElishaFlacon
+:copyright: (c) 2023 ElishaFlacon
 """
 
 version = '0.0.1'
@@ -15,21 +13,20 @@ version = '0.0.1'
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
-#! изменить все в setup
 setup(
     name='reepsy',
     version=version,
-    author='',
+    author='ElishaFlacon',
     author_email='',
     description=(
-        u'Python module for writing scripts for project management platform '
+        u'Библиотека для '
         u'Club House (clubhouse.io API wrapper)'
     ),
     long_description=long_description,
     long_description_content_type='text/markdown',
 
-    url='https://github.com/Peopl3s/club_house_api',
-    download_url='https://github.com/Peopl3s/club-house-api/archive/main.zip',
+    url='https://github.com/ElishaFlacon/reepsy',
+    download_url='https://github.com/ElishaFlacon/reepsy/archive/main.zip',
 
     license='Apache License, Version 2.0, see LICENSE file',
 

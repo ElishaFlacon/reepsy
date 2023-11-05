@@ -1,5 +1,6 @@
 import cv2
 import torch
+
 from torchvision.transforms import ToTensor, Compose
 
 from reepsy.utils.device import Device

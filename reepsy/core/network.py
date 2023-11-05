@@ -4,7 +4,7 @@ from torch.nn import CrossEntropyLoss
 
 from torchvision.models.googlenet import googlenet
 
-from ...utils.device import Device
+from reepsy.utils.device import Device
 
 
 class Network():
