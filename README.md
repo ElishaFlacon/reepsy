@@ -45,7 +45,7 @@
 </h2>
 
 - Пример использования - <a href="https://github.com/ElishaFlacon/reepsy/tree/main/example/">example</a>
-- Документация - <a href="https://eelisey.ru/">docs</a>
+- Документация - <a href="https://eelisey.ru/">docs (пока нет)</a>
 
 
 
