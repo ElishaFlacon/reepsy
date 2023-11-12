@@ -8,6 +8,14 @@ from reepsy.utils.device import Device
 
 
 class Network():
+    """
+
+    Класс для создания нейронной сети
+
+    TODO: дописать
+
+    """
+
     def __init__(
         self,
         model=googlenet,
@@ -22,6 +30,9 @@ class Network():
         self.__optimizer = optimizer(self.__model.parameters(), learning_rate)
 
     def train(self, dataset, num_epochs: int = 1) -> any:
+        """
+        Метод для обучения нейронной сети
+        """
         for epoch in range(num_epochs):
             losses = []
             for _, (data, targets) in enumerate(dataset):
@@ -41,6 +52,9 @@ class Network():
         return self.__model
 
     def predict(self, dataset) -> float:
+        """
+        Метод для проверки точности нейронной сети
+        """
         num_correct = 0
         num_samples = 0
         self.__model.eval()
@@ -59,9 +73,15 @@ class Network():
         return float(num_correct)/float(num_samples)
 
     def save(self, path) -> None:
+        """
+        Метод для сохранения нейронной сети
+        """
         # self.__model
         pass
 
     def load(self, path) -> None:
+        """
+        Метод для загрузки нейронной сети
+        """
         # self.__model
         pass
