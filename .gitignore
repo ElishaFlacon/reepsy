@@ -13,3 +13,8 @@ dataset.*
 
 dist
 reepsy.egg-info
+
+data
+result
+
+*.dev.*
